@@ -1,0 +1,17 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: auto;
+    position: relative;
+    width: 960px;
+}
+
+.label {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+div {
+    float: left;
+    clear: both;
+}
