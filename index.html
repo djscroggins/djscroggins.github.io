@@ -4,26 +4,52 @@
     <meta charset="utf-8">
 
     <script src="//d3js.org/d3.v3.min.js"></script>
-    <script type="text/javascript" src="drawSunburst.js"></script>
-    <link rel="stylesheet" href="sunburst.css">
+    <script type="text/javascript" src="js/drawSunburst.js"></script>
+    <script type="text/javascript" src="js/drawChordDuo.js"></script>
+    <link rel="stylesheet" href="css/sunburst.css">
 </head>
 
 <body>
+
+<h2>CSC 595 - David Scroggins - Lab 3</h2>
+
+<h2 class="centered">
+<a href="https://bl.ocks.org/mbostock/4063423">Mike Bostock: Sunburst Partition</a>
+</h2>
+
+<p class="centered">With original data</p>
 
 <div>
     <label><input class="flareInput" type="radio" name="mode" value="size"> Size</label>
     <label><input class="flareInput" type="radio" name="mode" value="count" checked> Count</label>
     <svg id="flare" class="svg"></svg>
 </div>
+
+<p class="centered">With test data</p>
+
 <div>
     <label><input class="testInput" type="radio" name="mode" value="size"> Size</label>
     <label><input class="testInput" type="radio" name="mode" value="count" checked> Count</label>
     <svg id="test" class="svg"></svg>
 </div>
 
+<h2 class="centered">
+    <a href="https://bl.ocks.org/mbostock/1308257">The Euro Dept Crisis: Dual Chord Diagrams</a>
+</h2>
+
+<p class="centered">With original data</p>
+
+<div id="debtDiv"></div>
+
+<p class="centered">With test data</p>
+
+<div id="testDiv"></div>
+
 <script>
-    drawSunburst("flare.json", "#flare", ".flareInput");
-    drawSunburst("test.json", "#test", ".testInput");
+    drawSunburst("files/flare.json", "#flare", ".flareInput");
+    drawSunburst("files/test.json", "#test", ".testInput");
+    drawChordDuo("files/debt.csv", "#debtDiv");
+    drawChordDuo("files/test.csv", "#testDiv");
 </script>
 
 </body>
