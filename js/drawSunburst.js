@@ -1,9 +1,8 @@
 /**
  * Created by davidscroggins on 10/12/17.
  */
-/**
- * Created by davidscroggins on 10/12/17.
- */
+
+// TODO: Refactor to d3.v4
 
 var drawSunburst = function (file, idIn, formIn) {
 

@@ -1,6 +1,12 @@
 /**
  * Created by davidscroggins on 10/12/17.
  */
+
+// TODO: refactor to d3.v4
+// TODO: experiment with labeling. Label names for test data isn't coming through.
+// TODO: change color scheme
+// TODO: refactor code to be less dependent on "country/creditor/debtor structure"
+
 var drawChordDuo = function (fileIn, divIn) {
 
 
@@ -53,9 +59,6 @@ var drawChordDuo = function (fileIn, divIn) {
     d3.csv(fileIn, type, function(error, data) {
         if (error) throw error;
 
-//    d3.csv.parse(d3DebtText, type, function (error, data) {
-//        if (error) throw error;
-
         var countryByName = d3.map(),
             countryIndex = -1,
             countryByIndex = [];
@@ -102,8 +105,8 @@ var drawChordDuo = function (fileIn, divIn) {
                 .style("fill", function(d) { return fill(d.source.value.risk); })
                 .style("stroke", function(d) { return d3.rgb(fill(d.source.value.risk)).darker(); })
                 .attr("d", chord)
-                .append("title")
-                .text(function(d) { return d.source.value.debtor.name + " owes " + d.source.value.creditor.name + " $" + format(d.source.value) + "B."; });
+                // .append("title")
+                // .text(function(d) { return d.source.value.debtor.name + " owes " + d.source.value.creditor.name + " $" + format(d.source.value) + "B."; });
 
             // Add groups.
             var g = svg.selectAll(".group")
