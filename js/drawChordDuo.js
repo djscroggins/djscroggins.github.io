@@ -31,7 +31,9 @@ var drawChordDuo = function (fileIn, divIn) {
     // The color scale, for different categories of “worrisome” risk.
     var fill = d3.scale.ordinal()
         .domain([0, 1, 2])
-        .range(["#DB704D", "#D2D0C6", "#ECD08D", "#F8EDD3"]);
+        // .range(["#DB704D", "#D2D0C6", "#ECD08D", "#F8EDD3"]);
+        .range(["#8de4d3", "#e50000", "#943112", "#32e195"]);
+
 
     // The arc generator, for the groups.
     var arc = d3.svg.arc()

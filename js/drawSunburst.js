@@ -11,15 +11,11 @@ var drawSunburst = function (file, idIn, formIn) {
         radius = Math.min(width, height) / 2,
         color = d3.scale.category20c();
 
-//    var svg = d3.select("body").append("svg")
     var svg = d3.select(idIn)
         .attr("width", width)
         .attr("height", height)
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height * .52 + ")");
-
-//    var width2 = +svg.attr("width"), height2 = +svg.attr("height");
-
 
     var partition = d3.layout.partition()
         .sort(null)
@@ -32,13 +28,9 @@ var drawSunburst = function (file, idIn, formIn) {
         .innerRadius(function(d) { return Math.sqrt(d.y); })
         .outerRadius(function(d) { return Math.sqrt(d.y + d.dy); });
 
-//var drawSunburst = function (file) {
 
     d3.json(file, function(error, root) {
         if (error) throw error;
-
-//    d3.json.parse(flareJSON, function (error, root) {
-//        if (error) throw error;
 
         var path = svg.datum(root).selectAll("path")
             .data(partition.nodes)
