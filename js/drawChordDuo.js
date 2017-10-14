@@ -1,6 +1,8 @@
 /**
- * Created by davidscroggins on 10/12/17.
- */
+ * Draws side by side chord diagrams with transposed data
+ * @param {string} fileIn title or path to .csv file
+ * @param {string} divIn id of div element to be selected
+  */
 
 // TODO: refactor to d3.v4
 // TODO: experiment with labeling. Label names for test data isn't coming through.

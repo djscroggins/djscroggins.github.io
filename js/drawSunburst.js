@@ -1,17 +1,20 @@
 /**
- * Created by davidscroggins on 10/12/17.
+ * Draws Sunburst style tree map with transition effects for size and count
+ * @param {string} fileIn title or path to .json file
+ * @param {string} svgIn id svg element to be selected
+ * @param {string} inputIn class of input element to be selected
  */
 
 // TODO: Refactor to d3.v4
 
-var drawSunburst = function (file, idIn, formIn) {
+var drawSunburst = function (fileIn, svgIn, inputIn) {
 
     var width = 960,
         height = 700,
         radius = Math.min(width, height) / 2,
         color = d3.scale.category20c();
 
-    var svg = d3.select(idIn)
+    var svg = d3.select(svgIn)
         .attr("width", width)
         .attr("height", height)
         .append("g")
@@ -29,7 +32,7 @@ var drawSunburst = function (file, idIn, formIn) {
         .outerRadius(function(d) { return Math.sqrt(d.y + d.dy); });
 
 
-    d3.json(file, function(error, root) {
+    d3.json(fileIn, function(error, root) {
         if (error) throw error;
 
         var path = svg.datum(root).selectAll("path")
@@ -42,7 +45,7 @@ var drawSunburst = function (file, idIn, formIn) {
             .style("fill-rule", "evenodd")
             .each(stash);
 
-        d3.selectAll(formIn).on("change", function change() {
+        d3.selectAll(inputIn).on("change", function change() {
             var value = this.value === "count"
                 ? function() { return 1; }
                 : function(d) { return d.size; };

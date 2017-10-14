@@ -30,6 +30,7 @@ path.chord {
     fill-opacity: .75;
 }
 
-.centered {
+.center-clear {
     text-align: center;
+    clear: both;
 }
