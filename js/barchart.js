@@ -12,12 +12,9 @@ var Barchart = function () {
                 }
             })();
 
-            // svgIn.selectAll("g").remove();
-
             d3.select(svgIn).selectAll("g").remove();
 
             var svg = d3.select(svgIn)
-            // .append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
@@ -47,14 +44,6 @@ var Barchart = function () {
                 .range([0, data.length * barHeight + data.length]);
 
             var yAxis = d3.axisLeft(yScale);
-
-            // Building bar chart
-            // Add title
-//    svg.append("text")
-//        .attr("x", width/2)
-//        .attr("y", 0 - (margin.top/2))
-//        .attr("class", "title")
-//        .text("Lab 2 - D3 Bar Chart");
 
             // Add bars
             var bar = svg.selectAll("g").data(data).enter()
