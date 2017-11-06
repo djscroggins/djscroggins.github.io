@@ -73,13 +73,8 @@ var Sunburst = function () {
                     a.x1s = b.x1;
                     return arc(b);
                 }
-
                 return tween;
             }
-        },
-
-        getSearchString: function (searchStringIn) {
-            return searchStringIn;
         },
 
         dispatch: d3.dispatch("clicked")
