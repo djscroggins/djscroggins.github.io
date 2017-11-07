@@ -3,59 +3,27 @@
 <head>
     <meta charset="utf-8">
 
-    <title>CSC 595 - Lab 3</title>
+    <title>CSC 595 - Lab Submissions</title>
 
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript" src="js/drawSunburst.js"></script>
     <script type="text/javascript" src="js/drawChordDuo.js"></script>
     <link rel="stylesheet" href="css/lab3.css">
+    <link rel="stylesheet" href="css/general.css">
 </head>
 
 <body>
 
-    <h2>CSC 595 - David Scroggins - Lab 3</h2>
+    <h2>David J Scroggins <br/> CSC 595 <br/> Lab Sumbissions</h2>
 
     <!--Sunburst elements-->
-    <h2 class="center-clear">
-        <a href="https://bl.ocks.org/mbostock/4063423" target="_blank">Mike Bostock: Sunburst Partition</a>
+    <h2>
+        <a href="lab3.html" target="_blank">Lab 3</a>
     </h2>
 
-    <p class="center-clear">With original data (click radio buttons for transition)</p>
-
-    <div>
-        <label><input class="flareInput" type="radio" name="mode" value="size"> Size</label>
-        <label><input class="flareInput" type="radio" name="mode" value="count" checked> Count</label>
-        <svg id="flare" class="svg"></svg>
-    </div>
-
-    <p class="center-clear">With test data</p>
-
-    <div>
-        <label><input class="testInput" type="radio" name="mode" value="size"> Size</label>
-        <label><input class="testInput" type="radio" name="mode" value="count" checked> Count</label>
-        <svg id="test" class="svg"></svg>
-    </div>
-
-    <!--Dual chord diagram elements-->
-    <h2 class="center-clear">
-        <a href="https://bl.ocks.org/mbostock/1308257" target="_blank">The Euro Dept Crisis: Dual Chord Diagrams (with
-            color experimentation)</a>
+    <h2>
+        <a href="lab4.html" target="_blank">Lab 4</a>
     </h2>
-
-    <p class="center-clear">With original data</p>
-
-    <div id="debtDiv"></div>
-
-    <p class="center-clear">With test data</p>
-
-    <div id="testDiv"></div>
-
-    <script>
-        drawSunburst("files/flare.json", "#flare", ".flareInput");
-        drawSunburst("files/test.json", "#test", ".testInput");
-        drawChordDuo("files/debt.csv", "#debtDiv");
-        drawChordDuo("files/test.csv", "#testDiv");
-    </script>
 
 </body>
 </html>
