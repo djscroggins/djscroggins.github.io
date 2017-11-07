@@ -27,19 +27,19 @@ var Sunburst = function () {
                     .sum(function (d) { return d.size; })
                     .sort(function(a, b) { return b.value - a.value; });
 
-
                 partition(root);
+
                 arc = d3.arc()
                     .startAngle(function (d) { d.x0s = d.x0; return d.x0; })
                     .endAngle(function (d) { d.x1s = d.x1; return d.x1; })
                     .innerRadius(function (d) { return d.y0; })
                     .outerRadius(function (d) { return d.y1; });
 
-                var slice = g.selectAll('g')
+                var segment = g.selectAll('g')
                     .data(root.descendants())
                     .enter().append('g').attr("class", "node");
 
-                slice.append('path').attr("display", function (d) { return d.depth ? null : "none"; })
+                segment.append('path').attr("display", function (d) { return d.depth ? null : "none"; })
                     .attr("d", arc)
                     .style('stroke', '#fff')
                     .style("fill", function (d) { return color((d.children ? d : d.parent).data.name); })
@@ -59,7 +59,7 @@ var Sunburst = function () {
 
                     partition(root);
 
-                    slice.selectAll("path").transition().duration(750).attrTween("d", arcTweenPath);
+                    segment.selectAll("path").transition().duration(750).attrTween("d", arcTweenPath);
                 });
             });
 
