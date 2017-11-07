@@ -3,7 +3,7 @@
 <head>
     <title>David J Scroggins - CSC 595 - Lab 4</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script type="text/javascript" src="js/sunburst3.js"></script>
+    <script type="text/javascript" src="js/sunburst_dispatch.js"></script>
     <script type="text/javascript" src="js/parser.js"></script>
     <script type="text/javascript" src="js/flareJSON.js"></script>
     <script type="text/javascript" src="js/barchart.js"></script>
@@ -13,10 +13,10 @@
 <body>
 
 <p>
-    The following Sunburst (refactored from Lab 3 submission to v4 and slightly updated) visualization uses
-    d3.dispatch to recursively parse <br/> the children of the selected Node and render their sizes in
-    a bar chart (adapted from Lab 2) below. My initial goal was to render a <br/> hierarhical drop down
-    menu by parsing only the region of the JSON, however this proved trickier than I thought inside of
+    The following Sunburst visualization (refactored from Lab 3 submission to v4 and slightly updated) uses
+    d3.dispatch to recursively parse <br/> the children of the selected node and render their sizes in
+    a bar chart (adapted from Lab 2) below. My initial goal was to render a <br/> hierarchical drop down
+    menu by parsing only the selected region of the JSON, however this proved trickier than I thought inside of
     d3, so will <br/> have to save that for winter break when I have time to work out an optimal solution.
 </p>
 <label><input class="sizeSelect" type="radio" name="mode" value="size" checked /> Size</label>
