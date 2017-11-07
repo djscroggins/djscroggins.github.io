@@ -19,6 +19,17 @@
     menu by parsing only the selected region of the JSON, however this proved trickier than I thought inside of
     d3, so will <br/> have to save that for winter break when I have time to work out an optimal solution.
 </p>
+
+<p>
+    The Sunburst visualization was originally adapted from Mike Bostock's
+    <a href="https://bl.ocks.org/mbostock/4063423" target="_blank">Sunburst Partition</a>. Refactoring to v4 was done
+    following the documentation <br/> for
+    <a href="https://github.com/d3/d3/blob/master/CHANGES.md">changes in D3 v4</a>
+    as well as using David Richard's
+    <a href="https://bl.ocks.org/denjn5/e1cdbbe586ac31747b4a304f8f86efa5" target="_blank">Sunburst Tutorial series</a>
+    as a general guide.
+</p>
+
 <label><input class="sizeSelect" type="radio" name="mode" value="size" checked /> Size</label>
 <label><input class="sizeSelect"  type="radio" name="mode" value="count" /> Count</label>
 <svg id="sunburst"></svg>

@@ -11,14 +11,12 @@ var Parser = function () {
                             if (childrenIn[c].children) {
                                 getChildrenAux(childrenIn[c].children)
                             } else {
-                                console.log(childrenIn[c].size);
                                 results.push([childrenIn[c].name, childrenIn[c].size]);
                             }
                         }
                     }
                     getChildrenAux(dataIn[d].children);
                 } else if (dataIn[d].name !== stringIn && dataIn[d].children ) {
-                    console.log("Still going!");
                     this.getChildren(dataIn[d].children, stringIn);
                 }
             }
